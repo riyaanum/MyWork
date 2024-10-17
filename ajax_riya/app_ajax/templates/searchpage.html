@@ -1,0 +1,33 @@
+{% load static %}
+<html>
+    <head>
+        <title>
+            {% block title %}
+            welcome
+            {% endblock %}
+        </title>
+        <script src="{% static 'jquery.min.js' %}"></script>
+        <script src="{% static 'data-fill.js' %}"></script> 
+        <script src="{% static 'search-script.js' %}"></script>
+        <script src="{% static 'update-script.js' %}"></script>
+        <!-- <script src="{% static 'search-update-script.js' %}"></script>  -->
+    </head>
+    <body>
+        <header>
+            <a href="{% url 'home' %}">Home</a>|
+            <a href="{% url 'register' %}">Register</a>|
+            <a href="{% url 'searchpage' %}">Search</a>|
+
+        </header>
+        {% block body %}
+        <h1>search</h1>
+<select id="sel1">
+    
+</select><input type="button" value="search" id="btnSearch"><br><br>
+
+<input type="text" id="txtaddress">
+<input type="button" id="btnUpdate" value="Update">
+        {% endblock %}
+        
+    </body>
+</html>
